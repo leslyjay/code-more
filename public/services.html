@@ -66,7 +66,7 @@
       overflow: hidden;
       border-right: .15em solid #facc15;
       white-space: nowrap;
-      animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
     }
 
     @keyframes typing {
@@ -108,12 +108,12 @@
 
   <!-- Hero Section -->
   <section id="hero" class="relative z-10 min-h-screen flex items-center justify-center text-center bg-fixed bg-center bg-cover" style="background-image: url('/images/bg-parallax.jpg')">
-    <div class="bg-black bg-opacity-70 p-10 rounded-lg animate__animated animate__fadeInUp">
+    <div class="bg-black bg-opacity-70 p-10 rounded-lg animate__animated animate__zoomInDown animate__slower">
       <div class="typewriter">
         <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-300">Welcome to Code MORE</h1>
       </div>
-      <p class="text-xl md:text-2xl max-w-2xl mx-auto my-6 text-gray-200">We Build. We Break. We Help Africa Earn. This is Vision. This is Power. This is Code MORE.</p>
-      <a href="services.html" class="glow-btn bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Explore Services</a>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto my-6 text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">We Build. We Break. We Help Africa Earn. This is Vision. This is Power. This is Code MORE.</p>
+      <a href="services.html" class="glow-btn bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate__animated animate__pulse animate__delay-2s animate__infinite">Explore Services</a>
     </div>
   </section>
 
@@ -121,28 +121,27 @@
   <section id="services" class="py-20 px-6 md:px-20 bg-gray-900 relative z-10">
     <h2 class="text-4xl font-bold text-center mb-12 animate__animated animate__fadeInDown">Our Services</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Repeatable Card Component -->
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-200">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">🛡️ Cybersecurity Services</h3>
         <p>Advanced penetration testing, password breach analysis, SSL/TLS audits, and vulnerability insights for Africa & the world.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-400">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">🌍 Web Development</h3>
         <p>Secure, mobile-first sites built for scale, style, and serious online presence. NGOs and startups welcome.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-600">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">🤝 Virtual Assistance</h3>
         <p>Inbox zero, research, socials — your remote productivity partner helping you execute with precision.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-800">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">🧠 Vulnerability Scanner</h3>
         <p>Built by Lesly, this scanner checks breaches, ports, SSL and gives you the edge in security + bug bounty.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-1000">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">💖 Dada Flow Initiative</h3>
         <p>Empowering girls across Kenya with digital dignity kits, mentorship, and purpose-built platforms.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg animate__animated animate__fadeInUp">
+      <div class="glass p-6 text-center shadow-lg sr-fade delay-1200">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">🌊 Coast Connect</h3>
         <p>Connecting coastal Kenya to digital work, freelance gigs, and community learning initiatives.</p>
       </div>
@@ -152,10 +151,10 @@
   <!-- About -->
   <section id="about" class="py-20 px-6 md:px-20 bg-gray-950 text-white relative z-10">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div class="relative animate__animated animate__fadeInLeft">
+      <div class="relative animate__animated animate__fadeInLeft animate__slower">
         <img src="images/lesly-profile.png" alt="Lesly Juma" class="rounded-2xl shadow-2xl border-4 border-yellow-300 hover:scale-105 transition duration-500" />
       </div>
-      <div class="animate__animated animate__fadeInRight">
+      <div class="animate__animated animate__fadeInRight animate__slower">
         <h2 class="text-4xl font-extrabold mb-4 text-yellow-300">About Me</h2>
         <p class="text-lg text-gray-300 leading-relaxed mb-4">
           I’m <span class="font-bold text-white">Lesly Juma</span>, a digital rebel fueling innovation across Africa. From building elite vulnerability scanners to empowering communities — my mission is impact, empowerment, and earning.
@@ -167,19 +166,28 @@
     </div>
   </section>
 
-  <!-- JS: Theme Toggle -->
+  <!-- JS -->
   <script>
     function toggleTheme() {
       const body = document.getElementById('body');
       body.classList.toggle('theme-light');
     }
 
-    ScrollReveal().reveal('.glass, #about h2, #services h2', {
+    ScrollReveal().reveal('.sr-fade', {
       delay: 200,
       distance: '40px',
-      duration: 1000,
+      duration: 1200,
       origin: 'bottom',
-      reset: false
+      interval: 200,
+      reset: false,
+      easing: 'ease-in-out',
+    });
+
+    ScrollReveal().reveal('#about h2', {
+      delay: 200,
+      distance: '50px',
+      origin: 'left',
+      duration: 1000,
     });
   </script>
 </body>

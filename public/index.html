@@ -10,9 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; transition: background 0.3s ease; }
+    body {
+      overflow-x: hidden;
+      font-family: 'Outfit', sans-serif;
+      transition: background 0.3s ease;
+    }
 
     .glass {
       background: rgba(255, 255, 255, 0.05);
@@ -47,7 +52,7 @@
       overflow: hidden;
       border-right: .15em solid yellow;
       white-space: nowrap;
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
     }
 
     @keyframes typing {
@@ -64,6 +69,50 @@
       color: #facc15;
       font-weight: bold;
     }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      animation: slideInRight 1s ease-out forwards;
+    }
+
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .typewriter h1 {
+        font-size: 2.25rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-white font-sans" id="body">
@@ -75,7 +124,12 @@
         <img src="images/logo.png" class="w-10 h-10" alt="Code MORE Logo">
         <span class="font-bold text-yellow-300 text-xl">Code MORE</span>
       </div>
-      <ul class="flex gap-6 text-sm md:text-base">
+      <div id="particles-js" class="fixed inset-0 -z-10"></div>
+      <!-- Preloader -->
+      <div id="preloader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+        <img src="images/logo.png" alt="Loading..." class="w-20 h-20 animate-ping" />
+      </div>
+      <ul class="flex gap-4 text-sm md:text-base">
         <li><a href="#hero" class="hover:text-yellow-400 transition">Home</a></li>
         <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
         <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
@@ -87,28 +141,31 @@
 
   <!-- HERO -->
   <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-fixed bg-center bg-cover pt-24" style="background-image: url('/images/bg-parallax.jpg')">
-    <div class="bg-black bg-opacity-70 p-8 rounded-lg">
+    <div class="bg-black bg-opacity-70 p-6 sm:p-10 rounded-lg">
       <div class="typewriter">
-        <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-300">Welcome to Code MORE</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-yellow-300 break-words leading-tight">
+          Welcome to <br class="sm:hidden" /> Code MORE
+        </h1>
       </div>
       <p class="text-xl md:text-2xl max-w-xl mx-auto my-6 text-gray-200">We Build. We Break. We Help Africa Earn. This is Vision. This is Power. This is Code MORE.</p>
       <a href="services.html" class="glow-btn bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Explore Services</a>
     </div>
+
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="py-20 px-6 md:px-20 bg-gray-900">
+  <section id="services" class="py-20 px-6 md:px-20 bg-gray-900 fade-up">
     <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-6 text-center">
+      <div class="glass p-6 text-center slide-in-left">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">Dada Flow Initiative</h3>
         <p>Empowering girls across Kenya with digital dignity kits, mentorship, and web presence. Building confidence through tech and support.</p>
       </div>
-      <div class="glass p-6 text-center">
+      <div class="glass p-6 text-center fade-up">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">Vulnerability Scanner</h3>
         <p>Lesly’s powerful scanner finds, reports, and secures digital systems. Supporting bug bounty hunters and businesses alike.</p>
       </div>
-      <div class="glass p-6 text-center">
+      <div class="glass p-6 text-center slide-in-right">
         <h3 class="text-2xl font-bold mb-4 text-yellow-300">Coast Connect</h3>
         <p>A digital hub connecting Kenya’s coast with jobs, freelance skills, and mentorship to build a tech-empowered future.</p>
       </div>
@@ -116,7 +173,7 @@
   </section>
 
   <!-- ABOUT PREVIEW -->
-  <section id="about" class="py-20 px-6 md:px-20 bg-gray-950">
+  <section id="about" class="py-20 px-6 md:px-20 bg-gray-950 fade-up">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       <div class="animate__animated animate__fadeInLeft">
         <img src="images/lesly-profile.png" alt="Lesly Juma" class="rounded-2xl shadow-2xl border-4 border-yellow-300 hover:scale-105 transition duration-500" />
@@ -134,7 +191,7 @@
   </section>
 
   <!-- TECH STACK -->
-  <section class="py-20 px-6 bg-gray-800">
+  <section class="py-20 px-6 bg-gray-800 fade-up">
     <h2 class="text-4xl font-bold text-center mb-12">Tech Stack</h2>
     <div class="flex flex-wrap justify-center gap-10">
       <img src="images/html.png" alt="HTML" class="w-20 hover:scale-125 transition" />
@@ -146,7 +203,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="py-20 px-6 bg-gray-900">
+  <section class="py-20 px-6 bg-gray-900 fade-up">
     <h2 class="text-4xl font-bold text-center mb-12">What People Say</h2>
     <div class="swiper mySwiper max-w-3xl mx-auto">
       <div class="swiper-wrapper">
@@ -159,7 +216,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-6 bg-yellow-400 text-black text-center">
+  <section class="py-20 px-6 bg-yellow-400 text-black text-center fade-up">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
     <p class="text-lg mb-6">Need a secure site, audit, or assistant? Code MORE is ready.</p>
     <a href="contact.html" class="glow-btn bg-black text-yellow-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition">Contact Lesly</a>
@@ -193,6 +250,9 @@
       loop: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       autoplay: { delay: 4000 },
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centeredSlides: true
     });
 
     function toggleTheme() {
@@ -203,5 +263,39 @@
       body.classList.toggle('text-black');
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt"></script>
+  <script>
+    // PRELOADER
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
+  
+    // PARTICLES
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        color: { value: "#facc15" },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#facc15",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 3 }
+      }
+    });
+  
+    // TILT 3D
+    VanillaTilt.init(document.querySelectorAll(".glass"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3
+    });
+  </script>
+  
 </body>
 </html>

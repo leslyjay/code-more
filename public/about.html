@@ -6,23 +6,34 @@
   <title>About Lesly | Code MORE</title>
   <link rel="icon" href="images/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
+
     .glass {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(14px);
       border-radius: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.4s ease;
     }
+
+    .glass:hover {
+      transform: translateY(-6px);
+    }
+
     .gradient-text {
       background: linear-gradient(90deg, #facc15, #f97316, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    body {
+      background: #0f0f0f;
+    }
   </style>
 </head>
-<body class="bg-gray-950 text-white font-sans">
+<body class="text-white font-sans bg-gray-950">
 
   <!-- Navbar -->
   <header class="bg-black bg-opacity-80 backdrop-blur-sm fixed top-0 w-full z-50 shadow-md">
@@ -38,23 +49,21 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800 px-4 pt-32">
+  <section class="min-h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800 px-4 pt-32" data-aos="fade-up">
     <div>
       <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text animate-pulse">👤 Meet the Founder</h1>
-      <p class="text-xl text-gray-200 max-w-2xl mx-auto">The journey of a visionary from Mombasa building digital solutions that transform Africa and the world.</p>
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto">From Mombasa to the world — building tech that transforms lives.</p>
     </div>
   </section>
 
   <!-- Lesly Bio -->
   <section class="py-20 px-6 md:px-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
       <img src="images/lesly-profile.png" alt="Lesly Juma" class="rounded-xl shadow-2xl w-full border-4 border-yellow-400 hover:scale-105 transition duration-500">
       <div>
         <h2 class="text-3xl font-bold text-yellow-300 mb-4">Lesly Juma – Founder of Code MORE</h2>
         <p class="text-lg text-gray-300 leading-relaxed">
-          Born in the coastal city of Mombasa, Kenya 🇰🇪, I’ve always believed in building with purpose. From humble beginnings to becoming a cybersecurity specialist, web developer, and visionary behind projects like <strong>Dada Flow</strong> and <strong>Coast Connect</strong>, I turned challenges into code, and code into impact.
-          <br /><br />
-          With <strong>Code MORE</strong>, I aim to empower individuals and organizations across Africa with secure digital tools, clean web platforms, and world-class support — helping them build, break barriers, and earn more.
+          From the heart of Mombasa 🇰🇪, I built <strong>Code MORE</strong> to empower Africa. As a cybersecurity specialist, web developer & changemaker, I lead with passion and purpose through digital innovation and projects like <strong>Dada Flow</strong> and <strong>Coast Connect</strong>.
         </p>
       </div>
     </div>
@@ -62,42 +71,34 @@
 
   <!-- Vision & Mission -->
   <section class="py-20 px-6 md:px-20 bg-gray-800 text-center">
-    <h2 class="text-4xl font-bold mb-10 text-yellow-300 animate-pulse">🔥 Our Vision & Mission</h2>
+    <h2 class="text-4xl font-bold mb-10 text-yellow-300 animate-pulse" data-aos="fade-up">🔥 Vision & Mission</h2>
     <div class="grid md:grid-cols-2 gap-12 text-lg text-gray-300">
-      <div class="glass p-8 hover:shadow-2xl transition duration-300">
+      <div class="glass p-8" data-aos="fade-right">
         <h3 class="text-2xl font-semibold mb-3">🌍 Vision</h3>
-        <p>To become Africa’s leading hub of digital transformation by providing secure, scalable, and empowering tech solutions that reach the globe.</p>
+        <p>To become Africa’s digital backbone — delivering secure, scalable, and empowering tech that reaches the globe.</p>
       </div>
-      <div class="glass p-8 hover:shadow-2xl transition duration-300">
+      <div class="glass p-8" data-aos="fade-left">
         <h3 class="text-2xl font-semibold mb-3">🎯 Mission</h3>
-        <p>To help individuals and organizations build secure platforms, access opportunities, and thrive online through cybersecurity, development, and digital support.</p>
+        <p>To help creators, businesses, and dreamers thrive online through world-class cybersecurity, clean code, and growth-ready platforms.</p>
       </div>
     </div>
   </section>
 
   <!-- Journey Timeline -->
   <section class="py-20 px-6 md:px-20 bg-gray-900">
-    <h2 class="text-4xl font-bold text-center mb-12 text-yellow-300">🛤️ My Journey</h2>
+    <h2 class="text-4xl font-bold text-center mb-12 text-yellow-300" data-aos="fade-up">🛤️ My Journey</h2>
     <div class="space-y-10 max-w-4xl mx-auto text-lg text-gray-300">
-      <div class="glass p-6">
-        <strong class="text-yellow-300">🧒 2022 –</strong> Joined Technical University of Mombasa for IT & Computer Science but paused due to financial challenges.
-      </div>
-      <div class="glass p-6">
-        <strong class="text-yellow-300">💻 2023 –</strong> Studied through Cisco Networking Academy, ALX Virtual Assistant program, and started freelancing.
-      </div>
-      <div class="glass p-6">
-        <strong class="text-yellow-300">🛠️ 2024 –</strong> Built Lesly’s Professional Vulnerability Scanner, and launched Dada Flow Initiative for girls’ empowerment.
-      </div>
-      <div class="glass p-6">
-        <strong class="text-yellow-300">🚀 2025 –</strong> Started <strong>Code MORE</strong> to serve Africa and the world with secure digital solutions.
-      </div>
+      <div class="glass p-6" data-aos="fade-up">🧒 <strong>2022 –</strong> Started IT & Computer Science at TUM. Paused due to financial challenges but never stopped learning.</div>
+      <div class="glass p-6" data-aos="fade-up" data-aos-delay="100">💻 <strong>2023 –</strong> Self-trained via Cisco & ALX. Began freelancing and real-world cybersecurity work.</div>
+      <div class="glass p-6" data-aos="fade-up" data-aos-delay="200">🛠️ <strong>2024 –</strong> Created Lesly’s Vulnerability Scanner and launched <strong>Dada Flow</strong> for girl empowerment.</div>
+      <div class="glass p-6" data-aos="fade-up" data-aos-delay="300">🚀 <strong>2025 –</strong> Founded <strong>Code MORE</strong> to power digital transformation across Africa.</div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-6 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black text-center">
+  <section class="py-20 px-6 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black text-center" data-aos="zoom-in">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Build Something Unstoppable</h2>
-    <p class="text-lg mb-6">Whether you’re a business, a startup, or a dreamer — Code MORE is your digital growth partner. Let's talk today.</p>
+    <p class="text-lg mb-6">You're not just hiring a developer. You're partnering with a visionary. Let’s get to work.</p>
     <a href="contact.html" class="bg-black text-yellow-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition duration-300">Contact Lesly</a>
   </section>
 
@@ -111,20 +112,17 @@
 
   <!-- Footer -->
   <footer class="bg-gray-950 text-center py-6 text-sm text-gray-400">
-    <p>&copy; 2025 Code MORE. All rights reserved.</p>
+    <p>&copy; 2025 <span class="text-yellow-300">Code MORE</span>. All rights reserved.</p>
     <p>Email: <a href="mailto:jumalesly40@gmail.com" class="text-yellow-300 hover:underline">jumalesly40@gmail.com</a> |
     WhatsApp: <a href="https://wa.me/254794018914" class="text-green-400 hover:underline">+254 794 018914</a></p>
   </footer>
 
-  <!-- Scroll Reveal Script -->
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    ScrollReveal().reveal('section', {
-      delay: 100,
-      duration: 1200,
-      distance: '80px',
-      origin: 'bottom',
-      easing: 'ease-in-out',
-      reset: false
+    AOS.init({
+      duration: 1000,
+      once: true
     });
   </script>
 </body>

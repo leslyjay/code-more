@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code MORE | Build. Break. Earn.</title>
+  <link rel="icon" href="images/logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; transition: background 0.3s ease; }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    }
+
+    .glow-btn {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .glow-btn::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(45deg, #ff0, #f0f, #0ff);
+      z-index: -1;
+      filter: blur(12px);
+      opacity: 0;
+      transition: 0.3s ease;
+      border-radius: 9999px;
+    }
+    .glow-btn:hover::before { opacity: 1; }
+
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: .15em solid yellow;
+      white-space: nowrap;
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: yellow; }
+    }
+
+    nav a.active {
+      color: #facc15;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white font-sans" id="body">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-950 bg-opacity-90 shadow-lg">
+    <nav class="flex justify-between items-center px-6 md:px-20 py-4">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" class="w-10 h-10" alt="Code MORE Logo">
+        <span class="font-bold text-yellow-300 text-xl">Code MORE</span>
+      </div>
+      <ul class="flex gap-6 text-sm md:text-base">
+        <li><a href="#hero" class="hover:text-yellow-400 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
+        <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+      </ul>
+      <button onclick="toggleTheme()" class="ml-4 text-sm bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-fixed bg-center bg-cover pt-24" style="background-image: url('/images/bg-parallax.jpg')">
+    <div class="bg-black bg-opacity-70 p-8 rounded-lg">
+      <div class="typewriter">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-300">Welcome to Code MORE</h1>
+      </div>
+      <p class="text-xl md:text-2xl max-w-xl mx-auto my-6 text-gray-200">We Build. We Break. We Help Africa Earn. This is Vision. This is Power. This is Code MORE.</p>
+      <a href="services.html" class="glow-btn bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 px-6 md:px-20 bg-gray-900">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-6 text-center">
+        <h3 class="text-2xl font-bold mb-4 text-yellow-300">Dada Flow Initiative</h3>
+        <p>Empowering girls across Kenya with digital dignity kits, mentorship, and web presence. Building confidence through tech and support.</p>
+      </div>
+      <div class="glass p-6 text-center">
+        <h3 class="text-2xl font-bold mb-4 text-yellow-300">Vulnerability Scanner</h3>
+        <p>Lesly’s powerful scanner finds, reports, and secures digital systems. Supporting bug bounty hunters and businesses alike.</p>
+      </div>
+      <div class="glass p-6 text-center">
+        <h3 class="text-2xl font-bold mb-4 text-yellow-300">Coast Connect</h3>
+        <p>A digital hub connecting Kenya’s coast with jobs, freelance skills, and mentorship to build a tech-empowered future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section id="about" class="py-20 px-6 md:px-20 bg-gray-950">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate__animated animate__fadeInLeft">
+        <img src="images/lesly-profile.jpeg" alt="Lesly Juma" class="rounded-2xl shadow-2xl border-4 border-yellow-300 hover:scale-105 transition duration-500" />
+      </div>
+      <div class="animate__animated animate__fadeInRight">
+        <h2 class="text-4xl font-extrabold mb-4 text-yellow-300">About Me</h2>
+        <p class="text-lg text-gray-300 mb-4">
+          I’m <span class="font-bold text-white">Lesly Juma</span>, a digital rebel fueling innovation across Africa — from scanners to social impact.
+        </p>
+        <p class="text-lg text-gray-400">
+          At <span class="text-yellow-400 font-semibold">Code MORE</span>, we solve problems with precision. We empower. We break limits. Join this journey of purpose and power.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="py-20 px-6 bg-gray-800">
+    <h2 class="text-4xl font-bold text-center mb-12">Tech Stack</h2>
+    <div class="flex flex-wrap justify-center gap-10">
+      <img src="/images/html.png" alt="HTML" class="w-20 hover:scale-125 transition" />
+      <img src="/images/css.png" alt="CSS" class="w-20 hover:scale-125 transition" />
+      <img src="/images/js.png" alt="JavaScript" class="w-20 hover:scale-125 transition" />
+      <img src="/images/python.png" alt="Python" class="w-20 hover:scale-125 transition" />
+      <img src="/images/tailwind.png" alt="Tailwind CSS" class="w-20 hover:scale-125 transition" />
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 px-6 bg-gray-900">
+    <h2 class="text-4xl font-bold text-center mb-12">What People Say</h2>
+    <div class="swiper mySwiper max-w-3xl mx-auto">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide text-center text-lg p-4">"Code MORE gave me the breakthrough I needed — fast and secure delivery."</div>
+        <div class="swiper-slide text-center text-lg p-4">"Lesly is a genius. The tools, the branding, and the power are unmatched."</div>
+        <div class="swiper-slide text-center text-lg p-4">"Professional, polished, and profitable. My business soared."</div>
+      </div>
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-yellow-400 text-black text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
+    <p class="text-lg mb-6">Need a secure site, audit, or assistant? Code MORE is ready.</p>
+    <a href="contact.html" class="glow-btn bg-black text-yellow-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition">Contact Lesly</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-950 text-center py-6 text-sm text-gray-400">
+    <p>&copy; 2025 Code MORE. All rights reserved.</p>
+    <p>Email: <a href="mailto:jumalesly40@gmail.com" class="text-yellow-300 hover:underline">jumalesly40@gmail.com</a> | WhatsApp: <a href="https://wa.me/254794018914" class="text-green-400 hover:underline">+254 794 018914</a></p>
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/254794018914" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition" title="Chat with Lesly on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M16.72 13.06c-.29-.14-1.72-.85-1.99-.95-.27-.1-.46-.14-.66.15-.19.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.14-1.23-.45-2.34-1.43-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.59-.9-2.2-.23-.55-.47-.48-.66-.49-.17-.01-.36-.01-.55-.01-.19 0-.48.07-.73.34s-.96.93-.96 2.26c0 1.32.98 2.6 1.12 2.78.14.17 1.93 2.94 4.7 4.12.66.28 1.17.45 1.57.58.66.21 1.26.18 1.74.11.53-.08 1.72-.7 1.96-1.38.24-.69.24-1.28.17-1.38-.07-.11-.25-.17-.53-.3z" />
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    ScrollReveal().reveal('section', {
+      delay: 200,
+      duration: 1000,
+      distance: '50px',
+      origin: 'bottom',
+      reset: false
+    });
+
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      autoplay: { delay: 4000 },
+    });
+
+    function toggleTheme() {
+      const body = document.getElementById('body');
+      body.classList.toggle('bg-gray-950');
+      body.classList.toggle('bg-white');
+      body.classList.toggle('text-white');
+      body.classList.toggle('text-black');
+    }
+  </script>
+</body>
+</html>

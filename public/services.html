@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code MORE | Build. Break. Earn.</title>
+  <title>Services | Code MORE</title>
   <link rel="icon" href="images/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
   <style>
     html { scroll-behavior: smooth; }
     body {
-      transition: background-color 0.5s, color 0.5s;
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Outfit', sans-serif;
     }
-
     .glass {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(14px);
@@ -24,170 +26,227 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .glass:hover {
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
-
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: .15em solid #facc15;
+      white-space: nowrap;
+      animation: typing 4s steps(40,end), blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #facc15; }
+    }
     .glow-btn {
       position: relative;
-      transition: all 0.3s ease;
       overflow: hidden;
       z-index: 1;
+      color: black;
+      background: #facc15;
+      padding: .75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
     }
-
     .glow-btn::before {
       content: "";
       position: absolute;
-      top: -2px; left: -2px; right: -2px; bottom: -2px;
-      background: linear-gradient(90deg, #facc15, #e11d48, #22d3ee);
+      top: -2px; bottom: -2px; left: -2px; right: -2px;
+      background: linear-gradient(90deg,#facc15,#e11d48,#22d3ee);
       background-size: 400%;
-      z-index: -1;
-      filter: blur(10px);
+      filter: blur(12px);
       opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
       border-radius: 9999px;
+      transition: opacity .3s ease, transform .3s ease;
       animation: pulseGlow 6s linear infinite;
+      z-index: -1;
     }
-
     .glow-btn:hover::before {
       opacity: 1;
       transform: scale(1.1);
     }
-
     @keyframes pulseGlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    .typewriter h1 {
-      overflow: hidden;
-      border-right: .15em solid #facc15;
-      white-space: nowrap;
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #facc15; }
-    }
-
-    .theme-light {
-      background-color: #f9fafb;
-      color: #1f2937;
-    }
-
-    .theme-light .glass {
-      background: rgba(0, 0, 0, 0.03);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .theme-light .glow-btn {
-      color: black;
-    }
-
-    .transition-all {
-      transition: all 0.4s ease-in-out;
-    }
   </style>
 </head>
+<body class="relative">
 
-<body class="bg-gray-950 text-white font-sans relative transition-all" id="body">
-
-  <!-- Theme Toggle -->
-  <div class="fixed top-5 right-5 z-50">
-    <button onclick="toggleTheme()" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-700 transition">🌓 Toggle Theme</button>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero" class="relative z-10 min-h-screen flex items-center justify-center text-center bg-fixed bg-center bg-cover" style="background-image: url('/images/bg-parallax.jpg')">
-    <div class="bg-black bg-opacity-70 p-10 rounded-lg animate__animated animate__zoomInDown animate__slower">
-      <div class="typewriter">
-        <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-300">Welcome to Code MORE</h1>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-950 bg-opacity-90 shadow-lg">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-2 text-yellow-300 font-bold text-xl">
+        <img src="images/logo.png" alt="Code MORE" class="w-8 h-8" /> Code MORE
+      </a>
+      <div class="space-x-6 text-sm md:text-base">
+        <a href="index.html" class="text-gray-300 hover:text-yellow-300">Home</a>
+        <a href="services.html" class="text-yellow-300 font-semibold">Services</a>
+        <a href="about.html" class="text-gray-300 hover:text-yellow-300">About</a>
+        <a href="contact.html" class="text-gray-300 hover:text-yellow-300">Contact</a>
       </div>
-      <p class="text-xl md:text-2xl max-w-2xl mx-auto my-6 text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">We Build. We Break. We Help Africa Earn. This is Vision. This is Power. This is Code MORE.</p>
-      <a href="services.html" class="glow-btn bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate__animated animate__pulse animate__delay-2s animate__infinite">Explore Services</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-32 bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800">
+    <div class="typewriter mb-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-yellow-300">Our Power-Packed Services</h1>
     </div>
+    <p class="max-w-3xl text-xl text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">
+      Cybersecurity, Web Development, Virtual Assistance, Scanner Tools, and Social Impact initiatives — built by code, powered by purpose.
+    </p>
+    <a href="#services" class="mt-8 glow-btn animate__animated animate__pulse animate__delay-2s">Explore Services</a>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="py-20 px-6 md:px-20 bg-gray-900 relative z-10">
-    <h2 class="text-4xl font-bold text-center mb-12 animate__animated animate__fadeInDown">Our Services</h2>
+  <!-- Services Grid -->
+  <section id="services" class="py-20 px-6 md:px-20 bg-gray-900">
+    <h2 class="text-4xl font-bold text-center text-yellow-300 mb-12" data-sr="fade-up">Our Full Service Suite</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-200">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">🛡️ Cybersecurity Services</h3>
-        <p>Advanced penetration testing, password breach analysis, SSL/TLS audits, and vulnerability insights for Africa & the world.</p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="200">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">🛡️ Cybersecurity Audits</h3>
+        <p>Pen testing, breach assessments, SSL/TLS audits, password breach reports and bug bounty prep.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-400">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">🌍 Web Development</h3>
-        <p>Secure, mobile-first sites built for scale, style, and serious online presence. NGOs and startups welcome.</p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="300">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">🌍 Web Development</h3>
+        <p>Secure, responsive websites designed for startups, NGOs, and scale-ready ventures.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-600">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">🤝 Virtual Assistance</h3>
-        <p>Inbox zero, research, socials — your remote productivity partner helping you execute with precision.</p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="400">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">🤝 Virtual Assistant</h3>
+        <p>Inbox, research, socials, scheduling – project-based or retainer support you can count on.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-800">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">🧠 Vulnerability Scanner</h3>
-        <p>Built by Lesly, this scanner checks breaches, ports, SSL and gives you the edge in security + bug bounty.</p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="500">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">🧠 Scanner Tools</h3>
+        <p>Lesly’s signature domain & port scanner, password checker, audit dashboard for secure scaling.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-1000">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">💖 Dada Flow Initiative</h3>
-        <p>Empowering girls across Kenya with digital dignity kits, mentorship, and purpose-built platforms.</p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="600">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">💖 Dada Flow</h3>
+        <p>Empowerment & mentorship platform for Kenyan girls, digital dignity kits, and skills coaching.</p>
       </div>
-      <div class="glass p-6 text-center shadow-lg sr-fade delay-1200">
-        <h3 class="text-2xl font-bold mb-4 text-yellow-300">🌊 Coast Connect</h3>
-        <p>Connecting coastal Kenya to digital work, freelance gigs, and community learning initiatives.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-20 px-6 md:px-20 bg-gray-950 text-white relative z-10">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div class="relative animate__animated animate__fadeInLeft animate__slower">
-        <img src="images/lesly-profile.png" alt="Lesly Juma" class="rounded-2xl shadow-2xl border-4 border-yellow-300 hover:scale-105 transition duration-500" />
-      </div>
-      <div class="animate__animated animate__fadeInRight animate__slower">
-        <h2 class="text-4xl font-extrabold mb-4 text-yellow-300">About Me</h2>
-        <p class="text-lg text-gray-300 leading-relaxed mb-4">
-          I’m <span class="font-bold text-white">Lesly Juma</span>, a digital rebel fueling innovation across Africa. From building elite vulnerability scanners to empowering communities — my mission is impact, empowerment, and earning.
-        </p>
-        <p class="text-lg text-gray-400 leading-relaxed">
-          At <span class="text-yellow-400 font-semibold">Code MORE</span>, we don’t just code — we break barriers, solve real-world problems, and redefine what’s possible for African tech talent.
-        </p>
+      <div class="glass p-8 text-center" data-sr="fade-up" data-sr-delay="700">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">🌊 Coast Connect</h3>
+        <p>Regional hub connecting coastal youth to freelance, tech jobs and community learning.</p>
       </div>
     </div>
   </section>
 
-  <!-- JS -->
+  <!-- Process + Pricing + Testimonials -->
+  <section class="py-20 bg-gray-950 text-gray-300 px-6 md:px-20">
+    <h2 class="text-4xl font-bold text-yellow-300 text-center mb-12" data-sr="fade-up">How We Work + Pricing</h2>
+    <div class="max-w-4xl mx-auto space-y-16">
+      <!-- 3-Step Process -->
+      <div class="space-y-6" data-sr="fade-up">
+        <h3 class="text-3xl font-semibold text-yellow-300">Our Process</h3>
+        <ul class="list-decimal ml-6 space-y-3">
+          <li><strong>Discovery:</strong> We meet and understand your goals, scale & security needs.</li>
+          <li><strong>Planning:</strong> Blueprint, timeline, and expected impact agreed.</li>
+          <li><strong>Deploy:</strong> We build, test, and deliver with training or dashboard demos.</li>
+        </ul>
+      </div>
+      <!-- Pricing Tiers -->
+      <div class="grid md:grid-cols-3 gap-8" data-sr="fade-up">
+        <div class="glass p-6 text-center">
+          <h4 class="text-2xl font-semibold text-yellow-300 mb-3">Starter Pack</h4>
+          <p class="text-xl mb-4">From KES 25,000</p>
+          <ul class="text-left list-disc ml-4 space-y-2">
+            <li>Basic portfolio website</li>
+            <li>Security audit overview</li>
+          </ul>
+        </div>
+        <div class="glass p-6 text-center border-yellow-300 border-2">
+          <h4 class="text-2xl font-semibold text-yellow-300 mb-3">Growth Pack</h4>
+          <p class="text-xl mb-4">From KES 75,000</p>
+          <ul class="text-left list-disc ml-4 space-y-2">
+            <li>Advanced site + CMS</li>
+            <li>Full penetration test</li>
+            <li>Virtual assistant support</li>
+          </ul>
+        </div>
+        <div class="glass p-6 text-center">
+          <h4 class="text-2xl font-semibold text-yellow-300 mb-3">Enterprise Pack</h4>
+          <p class="text-xl mb-4">Custom Quote</p>
+          <ul class="text-left list-disc ml-4 space-y-2">
+            <li>Scanner dashboard + SaaS access</li>
+            <li>Dada Flow or Coast Connect setup</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Testimonials Slider -->
+      <div data-sr="fade-up">
+        <h3 class="text-3xl font-semibold text-yellow-300 text-center mb-6">What People Say</h3>
+        <div class="swiper mySwiper max-w-3xl mx-auto">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide text-center p-6 glass">"Code MORE's security review saved my business from a breach."</div>
+            <div class="swiper-slide text-center p-6 glass">"Lesly brought my website vision to life — brilliant, fast, secure."</div>
+            <div class="swiper-slide text-center p-6 glass">"Professional, reliable, and cutting-edge work every time."</div>
+          </div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+      <!-- FAQ -->
+      <div data-sr="fade-up">
+        <h3 class="text-3xl font-semibold text-yellow-300 mb-6">Frequently Asked Questions</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-lg">What’s your turnaround time?</h4>
+            <p>Typically 1–2 weeks per phase, depending on complexity and scope.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Do you offer recurring support?</h4>
+            <p>Yes — retainers available for ongoing security scans and virtual assistance.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Can you customize the tools?</h4>
+            <p>Absolutely — scanner features or platform setup can be tailored to your needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-yellow-400 text-black text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Visionary?</h2>
+    <p class="text-lg mb-6">Let’s make your vision secure, visible, and powerful.</p>
+    <a href="contact.html" class="glow-btn">Get in Touch</a>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/254794018914" target="_blank"
+    class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition"
+    title="Chat with Lesly on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M16.72 13.06c-.29...-.53-.3z" />
+    </svg>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-center py-6 text-sm text-gray-400 border-t border-gray-800">
+    <p>&copy; 2025 <span class="text-yellow-300">Code MORE</span>. All rights reserved.</p>
+    <p>Email: <a href="mailto:jumalesly40@gmail.com"
+        class="text-yellow-300 hover:underline">jumalesly40@gmail.com</a> |
+      WhatsApp: <a href="https://wa.me/254794018914" class="text-green-400 hover:underline">+254 794 018914</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
   <script>
-    function toggleTheme() {
-      const body = document.getElementById('body');
-      body.classList.toggle('theme-light');
-    }
-
-    ScrollReveal().reveal('.sr-fade', {
-      delay: 200,
-      distance: '40px',
-      duration: 1200,
-      origin: 'bottom',
-      interval: 200,
-      reset: false,
-      easing: 'ease-in-out',
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 200, distance: '40px', duration: 1200,
+      origin: 'bottom', interval: 150, reset: false
     });
-
-    ScrollReveal().reveal('#about h2', {
-      delay: 200,
-      distance: '50px',
-      origin: 'left',
-      duration: 1000,
+    var swiper = new Swiper('.mySwiper', {
+      loop: true, pagination: { el: '.swiper-pagination', clickable: true },
+      autoplay: { delay: 4000 }, slidesPerView: 1, spaceBetween: 20
     });
   </script>
 </body>

@@ -8,9 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
   <style>
     html { scroll-behavior: smooth; }
+    body { background: linear-gradient(to bottom right, #0f0f0f, #1f1f1f); }
 
     .glass {
       background: rgba(255, 255, 255, 0.05);
@@ -34,45 +34,39 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    ::placeholder {
-      color: #ddd;
-    }
+    ::placeholder { color: #ddd; }
 
-    body {
-      background: linear-gradient(to bottom right, #0f0f0f, #1f1f1f);
-    }
-
-    /* Flip card styles */
-    .flip-card {
-      perspective: 1000px;
-    }
-
+    .flip-card { perspective: 1000px; }
     .flip-card-inner {
       transition: transform 0.8s;
       transform-style: preserve-3d;
     }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
-      backface-visibility: hidden;
-    }
-
-    .flip-card-back {
-      transform: rotateY(180deg);
-    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back { backface-visibility: hidden; }
+    .flip-card-back { transform: rotateY(180deg); }
   </style>
 </head>
-
 <body class="text-white font-sans">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-950 bg-opacity-90 shadow-lg">
+    <nav class="flex justify-between items-center px-6 md:px-20 py-4">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" class="w-10 h-10" alt="Code MORE Logo">
+        <span class="font-bold text-yellow-300 text-xl">Code MORE</span>
+      </div>
+      <ul class="flex gap-4 text-sm md:text-base">
+        <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
+        <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+        <li><a href="contact.html" class="text-yellow-300 font-bold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero -->
-  <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800 relative overflow-hidden">
+  <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800 pt-28">
     <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">📨 Contact Code MORE</h1>
     <p class="text-xl max-w-2xl text-gray-200">Got a project, partnership idea, or security concern? Reach out and let’s make tech magic happen.</p>
-    <div class="absolute w-[400px] h-[400px] bg-pink-600 opacity-20 rounded-full blur-3xl -z-10 top-10 left-1/4"></div>
   </section>
 
   <!-- Contact Form -->
@@ -96,15 +90,13 @@
         </button>
       </form>
 
-      <!-- Social Interactive Cards -->
+      <!-- Social Cards -->
       <div class="mt-20 text-center">
         <h3 class="text-2xl font-bold text-yellow-300 mb-3">💬 Connect With Lesly</h3>
         <p class="text-gray-400 mb-6">Choose your preferred platform:</p>
-
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center px-4">
-
           <!-- WhatsApp Card -->
-          <div class="flip-card w-60 h-60 bg-green-600 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
+          <div class="flip-card w-60 h-60 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
             <div class="flip-card-inner w-full h-full relative">
               <div class="flip-card-front absolute w-full h-full flex flex-col justify-center items-center rounded-xl bg-green-600">
                 <i class="fab fa-whatsapp text-6xl mb-4"></i>
@@ -118,7 +110,7 @@
           </div>
 
           <!-- GitHub Card -->
-          <div class="flip-card w-60 h-60 bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
+          <div class="flip-card w-60 h-60 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
             <div class="flip-card-inner w-full h-full relative">
               <div class="flip-card-front absolute w-full h-full flex flex-col justify-center items-center rounded-xl bg-gray-800">
                 <i class="fab fa-github text-6xl mb-4"></i>
@@ -132,7 +124,7 @@
           </div>
 
           <!-- LinkedIn Card -->
-          <div class="flip-card w-60 h-60 bg-blue-700 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
+          <div class="flip-card w-60 h-60 rounded-xl shadow-xl hover:shadow-2xl transition duration-500 mx-auto">
             <div class="flip-card-inner w-full h-full relative">
               <div class="flip-card-front absolute w-full h-full flex flex-col justify-center items-center rounded-xl bg-blue-700">
                 <i class="fab fa-linkedin text-6xl mb-4"></i>
@@ -151,11 +143,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-center py-6 text-sm text-gray-500 border-t border-gray-800">
-    &copy; 2025 <span class="text-yellow-400 font-bold">Code MORE</span>. Built to Build. Break. Earn.
+  <footer class="bg-gray-950 text-center py-6 text-sm text-gray-400">
+    <p>&copy; 2025 <span class="text-yellow-300 font-bold">Code MORE</span>. Built to Build. Break. Earn.</p>
+    <p>Email: <a href="mailto:jumalesly40@gmail.com" class="text-yellow-300 hover:underline">jumalesly40@gmail.com</a> |
+    WhatsApp: <a href="https://wa.me/254794018914" class="text-green-400 hover:underline">+254 794 018914</a></p>
   </footer>
 
-  <!-- Reveal Animations -->
+  <!-- ScrollReveal -->
   <script>
     ScrollReveal().reveal('.glass', {
       delay: 100,
